@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>沪上住梦 · 租就未来 —— 上海新市民租房信息平台</title>
-    <script src="https://cdn.tailwindcss.com">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js">
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
@@ -109,6 +107,19 @@
         .modal-input { width:100%; padding:8px 12px; border:1px solid #ede4db; border-radius:10px; font-size:0.85rem; margin-bottom:8px; }
 
         .logo-img { max-height: 48px; width: auto; object-fit: contain; }
+
+        /* 修复：雷达图容器必须设置高度 */
+        .radar-container {
+            min-height: 260px;
+            aspect-ratio: 1 / 1;
+        }
+
+        /* 新增：权重提示文字 */
+        .weight-hint {
+            font-size: 10px;
+            color: #8b6f5a;
+            margin-top: 2px;
+        }
     </style>
 </head>
 <body>
@@ -117,7 +128,6 @@
     <nav class="fixed top-0 w-full bg-white/94 backdrop-blur-md z-50 border-b border-[#ede4db] shadow-sm">
         <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2.5">
-                <!-- 导航栏 Logo（保留） -->
                 <img src="logo.png" alt="沪上住梦" class="logo-img"
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="w-9 h-9 bg-gradient-to-br from-[#5b3a29] to-[#7d5540] rounded-xl items-center justify-center text-white shadow-md" style="display: none;">
@@ -135,24 +145,25 @@
             </div>
             <button class="md:hidden text-[#5b3a29] text-xl" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
         </div>
+        <!-- 移动端菜单，点击链接自动关闭 -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-[#ede4db] px-4 py-3 space-y-2">
-            <a href="#home" class="block py-2 text-sm font-bold text-[#5b3a29]">首页</a>
-            <a href="#listings" class="block py-2 text-sm font-bold text-[#6b5a4e]">房源浏览</a>
-            <a href="#evaluation" class="block py-2 text-sm font-bold text-[#6b5a4e]">评价体系</a>
-            <a href="#scoring" class="block py-2 text-sm font-bold text-[#6b5a4e]">智能评分</a>
-            <a href="#government" class="block py-2 text-sm font-bold text-[#6b5a4e]">政府联络</a>
-            <a href="#news" class="block py-2 text-sm font-bold text-[#6b5a4e]">街道新闻</a>
+            <a href="#home" class="block py-2 text-sm font-bold text-[#5b3a29]" onclick="toggleMobileMenu()">首页</a>
+            <a href="#listings" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">房源浏览</a>
+            <a href="#evaluation" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">评价体系</a>
+            <a href="#scoring" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">智能评分</a>
+            <a href="#government" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">政府联络</a>
+            <a href="#news" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">街道新闻</a>
         </div>
     </nav>
 
     <!-- ==================== 主内容 ==================== -->
     <main class="max-w-7xl mx-auto px-4 md:px-6 py-20 space-y-14">
 
-        <!-- 首页 -->
+        <!-- 首页（未改） -->
         <section id="home" class="scroll-mt-20">
+            <!-- ... 与之前完全相同 ... -->
             <div class="warm-card overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch">
-                    <!-- 左侧：纯文字标题 -->
                     <div class="p-8 md:p-12 lg:p-14 flex flex-col justify-center text-center md:text-left">
                         <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-[#3d2b1f] mb-4 leading-tight">
                             沪上<span class="text-[#c67b3d]">"住"</span>梦<br><span class="text-[#5b3a29]">"租"</span>就未来
@@ -167,7 +178,6 @@
                             <a href="#scoring" class="btn-outline btn-sm"><i class="fas fa-star"></i> 智能评分</a>
                         </div>
                     </div>
-                    <!-- 右侧：横幅图片区域（logo.png） -->
                     <div class="relative min-h-[280px] md:min-h-[380px] bg-gradient-to-br from-[#fdf0e4] via-[#f8e8d6] to-[#f5e0cc] flex items-center justify-center overflow-hidden">
                         <img src="logo.png" alt="沪上住梦" class="relative z-10 max-h-[180px] md:max-h-[220px] w-auto object-contain"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -254,11 +264,13 @@
                             <div><label class="text-[10px] font-bold text-[#8b6f5a]">月租金 (元)</label><input type="number" id="rentInput" class="modal-input" placeholder="如 3500" oninput="autoMapRent()"></div>
                             <div><label class="text-[10px] font-bold text-[#8b6f5a]">通勤时间 (分钟)</label><input type="number" id="commuteInput" class="modal-input" placeholder="如 25" oninput="autoMapCommute()"></div>
                         </div>
+                        <!-- 权重开关区域，增加提示 -->
                         <div class="flex items-center gap-4 mb-2">
                             <label class="flex items-center gap-2 text-xs font-bold"><input type="checkbox" id="customWeightToggle" onchange="toggleCustomWeight()"> 自定义权重</label>
                             <span id="weightSumDisplay" class="text-[10px] text-[#8b6f5a] hidden">当前权重总和：<span id="weightSumVal">100</span>%</span>
                             <button onclick="resetWeights()" class="text-[10px] text-[#c67b3d] underline hidden" id="resetWeightBtn">重置为默认</button>
                         </div>
+                        <div class="weight-hint" id="weightHint" style="display:none;">⚠️ 权重总和不足100%将自动按比例归一化</div>
                         <div id="scoreInputs" class="space-y-2"></div>
                         <div class="flex flex-wrap gap-4 mt-4 pt-4 border-t border-[#ede4db]">
                             <button onclick="calculateScore()" class="btn-primary"><i class="fas fa-calculator"></i> 计算综合评分</button>
@@ -326,7 +338,7 @@
     </div>
 
     <script>
-        // ========== 数据 ==========
+        // ========== 数据（与之前一致）==========
         const listingsData = [
             { id:1, district:'黄浦区', area:'主城区', title:'黄浦·豫园精致一居', rent:5200, rooms:'1室1厅', areaSize:42, score:87, tags:['交通便利','生活配套丰富'], desc:'黄浦核心，毗邻豫园商圈。', imageEmoji:'🏙️', level:'high', imageFile:'listing_01.jpg' },
             { id:2, district:'静安区', area:'主城区', title:'静安·南京西路精品公寓', rent:6800, rooms:'2室1厅', areaSize:58, score:91, tags:['核心地段','品质装修'], desc:'静安寺商圈旁，精装修。', imageEmoji:'🏢', level:'high', imageFile:'listing_02.jpg' },
@@ -492,6 +504,9 @@
                     <div class="flex items-center gap-2">${weightDisplay}${inputHtml}</div>
                 </div>`;
             }).join('');
+            // 控制权重提示显示
+            const hint = document.getElementById('weightHint');
+            if (hint) hint.style.display = weightCustom ? 'block' : 'none';
             document.getElementById('weightSumDisplay').classList.toggle('hidden', !weightCustom);
             document.getElementById('resetWeightBtn').classList.toggle('hidden', !weightCustom);
             updateWeightSum();
@@ -540,6 +555,9 @@
         }
         function resetWeights() {
             scoreIndicators.forEach(ind => currentWeights[ind.id] = ind.weight);
+            // 修复：重置权重时同时关闭自定义开关
+            weightCustom = false;
+            document.getElementById('customWeightToggle').checked = false;
             renderScoreInputs();
         }
 
@@ -605,7 +623,8 @@
             document.getElementById('houseName').value=''; document.getElementById('houseDistrict').value='';
             document.getElementById('rentInput').value=''; document.getElementById('commuteInput').value='';
             currentWeights = {}; scoreIndicators.forEach(ind=>currentWeights[ind.id]=ind.weight);
-            weightCustom = false; document.getElementById('customWeightToggle').checked = false;
+            weightCustom = false;
+            document.getElementById('customWeightToggle').checked = false;
             renderScoreInputs();
             document.getElementById('scoringEmpty').classList.remove('hidden');
             document.getElementById('scoringResultContent').classList.add('hidden');

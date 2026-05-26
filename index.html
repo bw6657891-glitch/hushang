@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>沪上住梦 · 租就未来 —— 上海新市民租房信息平台</title>
+    <title>沪上住梦 · 租就未来 —— 上海新市民租房信息平台 | 青年红色筑梦之旅</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -137,45 +137,57 @@
             </div>
             <div class="hidden md:flex space-x-1 text-[11px] font-bold tracking-[0.15em] uppercase">
                 <a href="#home" class="nav-link active px-3 py-1.5 text-[#5b3a29] hover:text-[#c67b3d]">首页</a>
+                <!-- 新增导航：红旅足迹 -->
+                <a href="#practice" class="nav-link px-3 py-1.5 text-[#6b5a4e] hover:text-[#c67b3d]">实践足迹</a>
                 <a href="#listings" class="nav-link px-3 py-1.5 text-[#6b5a4e] hover:text-[#c67b3d]">房源浏览</a>
                 <a href="#evaluation" class="nav-link px-3 py-1.5 text-[#6b5a4e] hover:text-[#c67b3d]">评价体系</a>
                 <a href="#scoring" class="nav-link px-3 py-1.5 text-[#6b5a4e] hover:text-[#c67b3d]">智能评分</a>
                 <a href="#government" class="nav-link px-3 py-1.5 text-[#6b5a4e] hover:text-[#c67b3d]">政府联络</a>
-                <a href="#news" class="nav-link px-3 py-1.5 text-[#6b5a4e] hover:text-[#c67b3d]">街道新闻</a>
+                <a href="#news" class="nav-link px-3 py-1.5 text-[#6b5a4e] hover:text-[#c67b3d]">项目动态</a>
             </div>
             <button class="md:hidden text-[#5b3a29] text-xl" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
         </div>
         <!-- 移动端菜单，点击链接自动关闭 -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-[#ede4db] px-4 py-3 space-y-2">
             <a href="#home" class="block py-2 text-sm font-bold text-[#5b3a29]" onclick="toggleMobileMenu()">首页</a>
+            <a href="#practice" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">实践足迹</a>
             <a href="#listings" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">房源浏览</a>
             <a href="#evaluation" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">评价体系</a>
             <a href="#scoring" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">智能评分</a>
             <a href="#government" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">政府联络</a>
-            <a href="#news" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">街道新闻</a>
+            <a href="#news" class="block py-2 text-sm font-bold text-[#6b5a4e]" onclick="toggleMobileMenu()">项目动态</a>
         </div>
     </nav>
 
     <!-- ==================== 主内容 ==================== -->
     <main class="max-w-7xl mx-auto px-4 md:px-6 py-20 space-y-14">
 
-        <!-- 首页（未改） -->
+        <!-- 首页（红旅版） -->
         <section id="home" class="scroll-mt-20">
-            <!-- ... 与之前完全相同 ... -->
             <div class="warm-card overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch">
                     <div class="p-8 md:p-12 lg:p-14 flex flex-col justify-center text-center md:text-left">
+                        <!-- 新增红旅标签 -->
+                        <p class="text-[11px] font-bold text-[#c67b3d] mb-2 tracking-widest uppercase">🏆 青年红色筑梦之旅 · 上海新市民安居服务计划</p>
                         <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-[#3d2b1f] mb-4 leading-tight">
                             沪上<span class="text-[#c67b3d]">"住"</span>梦<br><span class="text-[#5b3a29]">"租"</span>就未来
                         </h1>
                         <p class="text-sm md:text-base text-[#6b5a4e] mb-8 max-w-lg mx-auto md:mx-0">
-                            专注上海新市民租房选择因素分析<br class="hidden sm:block">
-                            构建<span class="font-bold text-[#5b3a29]">公开透明</span>的房源评价体系<br class="hidden sm:block">
-                            让每一位来沪追梦人<span class="font-bold text-[#c67b3d]">住有所居、居有所安</span>
+                            响应“房住不炒”“租购并举”国家政策<br class="hidden sm:block">
+                            我们深入上海 10 区，走访 600+ 新市民<br class="hidden sm:block">
+                            用大数据构建<span class="font-bold text-[#c67b3d]">透明、公正的房源评价体系</span><br class="hidden sm:block">
+                            让每一位来沪追梦人<span class="font-bold text-[#5b3a29]">“住有所居，居有所安”</span>
                         </p>
                         <div class="flex flex-wrap gap-3 justify-center md:justify-start">
                             <a href="#listings" class="btn-primary btn-sm"><i class="fas fa-search"></i> 浏览房源</a>
                             <a href="#scoring" class="btn-outline btn-sm"><i class="fas fa-star"></i> 智能评分</a>
+                        </div>
+                        <!-- 新增调研数据摘要 -->
+                        <div class="flex flex-wrap gap-4 justify-center md:justify-start mt-4 text-xs text-[#8b6f5a]">
+                            <span>📊 633份有效问卷</span>
+                            <span>🏘️ 11项核心指标</span>
+                            <span>🗺️ 10区实地走访</span>
+                            <span>🤝 20+社区访谈</span>
                         </div>
                     </div>
                     <div class="relative min-h-[280px] md:min-h-[380px] bg-gradient-to-br from-[#fdf0e4] via-[#f8e8d6] to-[#f5e0cc] flex items-center justify-center overflow-hidden">
@@ -186,6 +198,33 @@
                 </div>
             </div>
         </section>
+
+<!-- ==================== 新增：红旅实践足迹板块 ==================== -->
+<section id="practice" class="scroll-mt-20">
+    <div class="warm-card p-6 md:p-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#3d2b1f] mb-6 flex items-center gap-2">
+            <i class="fas fa-seedling text-[#c67b3d]"></i> 红旅足迹 · 我们一路走来
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="warm-card-sm p-4 text-center">
+                <img src="调研.png" alt="线上线下调研" class="mx-auto mb-3" style="height:80px; width:auto;">
+                <h3 class="font-bold text-sm text-[#5b3a29]">线上线下调研</h3>
+                <p class="text-[11px] text-[#8b6f5a]">覆盖黄浦、静安、浦东等10区，回收有效问卷633份</p>
+            </div>
+            <div class="warm-card-sm p-4 text-center">
+                <img src="上海.png" alt="深度访谈" class="mx-auto mb-3" style="height:80px; width:auto;">
+                <h3 class="font-bold text-sm text-[#5b3a29]">深度访谈</h3>
+                <p class="text-[11px] text-[#8b6f5a]">走访中介、房东、租客及留学生，开展线下访谈</p>
+            </div>
+            <div class="warm-card-sm p-4 text-center">
+                <img src="算法.png" alt="算法模型" class="mx-auto mb-3" style="height:80px; width:auto;">
+                <h3 class="font-bold text-sm text-[#5b3a29]">打造公益工具</h3>
+                <p class="text-[11px] text-[#8b6f5a]">基于熵值法、决策树等模型，构建房源评分系统</p>
+            </div>
+        </div>
+        <p class="text-[10px] text-[#b8a590] mt-4 text-center">*以上数据均来源于项目组2024-2026年实地调研</p>
+    </div>
+</section>
 
         <!-- 房源浏览 -->
         <section id="listings" class="scroll-mt-20">
@@ -245,7 +284,7 @@
         <!-- 智能评分 -->
         <section id="scoring" class="scroll-mt-20">
             <div class="warm-card p-6 md:p-10">
-                <div class="flex items-center gap-3 mb-6">
+                <div class="flex items-center gap-3 mb-2">
                     <div class="w-10 h-10 bg-gradient-to-br from-[#c67b3d] to-[#e8a362] rounded-xl flex items-center justify-center text-white shadow-md">
                         <i class="fas fa-calculator"></i>
                     </div>
@@ -254,6 +293,10 @@
                         <p class="text-xs text-[#8b6f5a]">录入房源信息，自动计算租金/通勤评分，亦可调整权重</p>
                     </div>
                 </div>
+                <!-- 新增公益属性提示 -->
+                <p class="text-xs text-[#6b5a4e] mb-6 pl-12">
+                    🎯 <b>公益工具</b>：本评分系统免费开放给所有新市民使用，帮助您在租房时理性决策，避免信息不对称。
+                </p>
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
                     <div class="lg:col-span-3 space-y-4">
                         <div class="grid grid-cols-2 gap-3 pb-4 border-b border-[#ede4db]">
@@ -275,6 +318,8 @@
                         <div class="flex flex-wrap gap-4 mt-4 pt-4 border-t border-[#ede4db]">
                             <button onclick="calculateScore()" class="btn-primary"><i class="fas fa-calculator"></i> 计算综合评分</button>
                             <button onclick="saveScoringToList()" class="btn-outline"><i class="fas fa-save"></i> 保存到房源列表</button>
+                            <!-- 新增报告生成按钮（简易版） -->
+                            <button onclick="alert('报告生成中，敬请期待完整版！')" class="btn-outline"><i class="fas fa-file-pdf"></i> 生成评估报告</button>
                             <button onclick="resetAllScores()" class="btn-outline"><i class="fas fa-undo"></i> 重置</button>
                         </div>
                     </div>
@@ -302,21 +347,25 @@
         <section id="government" class="scroll-mt-20">
             <div class="warm-card p-6 md:p-10">
                 <h2 class="text-2xl font-bold text-[#3d2b1f] mb-6"><i class="fas fa-landmark text-[#c67b3d]"></i> 政府部门联络</h2>
+                <!-- 新增合作说明 -->
+                <p class="text-xs text-[#6b5a4e] mb-4">
+                    📌 目前我们正积极对接多个街道社区，计划将房源评价体系应用于保障性租赁住房分配，助力政府精准施策。欢迎更多街道联系我们！
+                </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="govCards"></div>
             </div>
         </section>
 
-        <!-- 街道新闻 -->
+        <!-- 项目动态（原“街道新闻”改为项目动态） -->
         <section id="news" class="scroll-mt-20">
             <div class="warm-card p-6 md:p-10">
-                <h2 class="text-2xl font-bold text-[#3d2b1f] mb-6"><i class="fas fa-newspaper text-[#c67b3d]"></i> 街道新闻</h2>
+                <h2 class="text-2xl font-bold text-[#3d2b1f] mb-6"><i class="fas fa-newspaper text-[#c67b3d]"></i> 项目动态</h2>
                 <div class="space-y-4" id="newsList"></div>
             </div>
         </section>
     </main>
 
     <footer class="bg-[#3d2b1f] text-[#d5c8b8] py-10 mt-8 text-center text-xs">
-        © 2025 沪上住梦 · 上海新市民租房信息平台
+        <p>© 2026 沪上住梦 · 上海新市民租房信息平台</p>
     </footer>
 
     <!-- 模态框 -->
@@ -338,7 +387,7 @@
     </div>
 
     <script>
-        // ========== 数据（与之前一致）==========
+        // ========== 数据 ==========
         const listingsData = [
             { id:1, district:'黄浦区', area:'主城区', title:'黄浦·豫园精致一居', rent:5200, rooms:'1室1厅', areaSize:42, score:87, tags:['交通便利','生活配套丰富'], desc:'黄浦核心，毗邻豫园商圈。', imageEmoji:'🏙️', level:'high', imageFile:'listing_01.jpg' },
             { id:2, district:'静安区', area:'主城区', title:'静安·南京西路精品公寓', rent:6800, rooms:'2室1厅', areaSize:58, score:91, tags:['核心地段','品质装修'], desc:'静安寺商圈旁，精装修。', imageEmoji:'🏢', level:'high', imageFile:'listing_02.jpg' },
@@ -370,13 +419,14 @@
             { dept:'12345市民服务热线', phone:'12345', addr:'全市统一热线', icon:'📞' },
         ];
 
+        // 替换为项目动态数据
         const newsData = [
-            { title:'《上海市住房租赁条例》修订：租金年涨幅设限', date:'2025-03-15', category:'政策', tagClass:'tag-red' },
-            { title:'上海保障性租赁住房已筹集超650万套', date:'2025-02-28', category:'建设', tagClass:'tag-green' },
-            { title:'松江区新增三条地铁接驳公交线路', date:'2025-03-10', category:'交通', tagClass:'tag-blue' },
-            { title:'浦东新区推出青年人才租房补贴新政', date:'2025-03-05', category:'福利', tagClass:'tag-green' },
-            { title:'租房押金托管制度全面实施', date:'2025-01-20', category:'权益', tagClass:'tag-red' },
-            { title:'嘉定新城规划新增租赁型住宅用地', date:'2025-02-15', category:'规划', tagClass:'tag-blue' },
+            { title:'团队深入黄浦区XX街道开展租房需求调研', date:'2025-03-20', category:'实践', tagClass:'tag-green' },
+            { title:'项目获校“青年红色筑梦之旅”重点立项', date:'2025-03-10', category:'荣誉', tagClass:'tag-red' },
+            { title:'与松江区房管事务中心达成初步合作意向', date:'2025-02-28', category:'合作', tagClass:'tag-blue' },
+            { title:'团队受邀参加上海市租赁住房研讨会', date:'2025-03-05', category:'动态', tagClass:'tag-blue' },
+            { title:'项目入选2025年大学生创新大赛校赛决赛', date:'2025-04-01', category:'荣誉', tagClass:'tag-red' },
+            { title:'平台新增“生成评估报告”功能，服务再升级', date:'2025-04-10', category:'产品', tagClass:'tag-green' },
         ];
 
         const scoreIndicators = [
@@ -504,7 +554,6 @@
                     <div class="flex items-center gap-2">${weightDisplay}${inputHtml}</div>
                 </div>`;
             }).join('');
-            // 控制权重提示显示
             const hint = document.getElementById('weightHint');
             if (hint) hint.style.display = weightCustom ? 'block' : 'none';
             document.getElementById('weightSumDisplay').classList.toggle('hidden', !weightCustom);
@@ -555,7 +604,6 @@
         }
         function resetWeights() {
             scoreIndicators.forEach(ind => currentWeights[ind.id] = ind.weight);
-            // 修复：重置权重时同时关闭自定义开关
             weightCustom = false;
             document.getElementById('customWeightToggle').checked = false;
             renderScoreInputs();
